@@ -6,7 +6,7 @@ let { [currEnvironment]: config } = require("./config.json");
 
 if ("env_var" in config) {
   const { [config.env_var]: connectionString } = process.env;
-  config = { connectionString };
+  config = { connectionString : `${connectionString}?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory`};
 }
 
 const pool = new Pool(config);
