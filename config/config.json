@@ -1,0 +1,25 @@
+{
+  "production": {
+    "env_var" : {
+      "host": "PROD_DB_HOST",
+      "username": "PROD_DB_USERNAME",
+      "password": "PROD_DB_PASSWORD",
+      "database": "PROD_DB_DATABASE",
+      "port": "PROD_DB_PORT"
+    }
+  },
+  "development": {
+    "host": "localhost",
+    "username": "postgres",
+    "password": "kunal2000",
+    "database": "bs-app-db",
+    "port": 5432
+  },
+  "test": {
+    "host": "localhost",
+    "username": null,
+    "password": null,
+    "database": "bs-app-db-test",
+    "port": 5432
+  }
+}
