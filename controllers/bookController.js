@@ -11,6 +11,15 @@ const getAllBooks = async (req, res) => {
   }
 };
 
+const getBookById = async (req, res) => {
+  try {
+    const book = await bookService.fetchBookById(req.params.bookId);
+    if(book) return res.status(200).json(prepareBooksData(book.rows)[1])
+  } catch (error) {
+    res.status(400).send(error);
+  }
+}
+
 const createBook = async (req, res) => {
   try {
     const book = await bookService.createBook(req.body);
@@ -31,6 +40,7 @@ const getTotalCount = async (req, res) => {
 
 module.exports = {
   getAllBooks,
+  getBookById,
   createBook,
   getTotalCount,
 };
